@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search | Google Search Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🔍 Google Search Analysis</h1>
+            <p class="subtitle">Get insights by analyzing the top Google search results instantly!</p>
+
+            <p class="intro-text">
+                Are you curious about what people are searching for on Google? With this tool, you can easily analyze the search results for any keyword and gain valuable insights into the search trends. Whether you're a marketer, data analyst, or simply curious, our tool is perfect for uncovering what's trending.
+            </p>
+
+            <form action="{{ url_for('search') }}" method="POST">
+                <label for="query">Enter Search Term:</label>
+                <input type="text" id="query" name="query" placeholder="e.g., DevOps tools" required>
+
+                <label for="num_results">Number of Results:</label>
+                <select id="num_results" name="num_results">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="20">20</option>
+                </select>
+
+                <button type="submit">Analyze</button>
+            </form>
+
+            <div class="info-section">
+                <h3>How It Works</h3>
+                <p>
+                    This tool scrapes Google's search results using the Google Custom Search API, fetching the top links related to the search query you provide. It then presents you with a summarized analysis of these results to give you insights into what's trending, popular search topics, and related content.
+                </p>
+
+                <h3>What You Can Learn</h3>
+                <ul>
+                    <li>Top articles and pages related to your search term</li>
+                    <li>Search trends and patterns based on real-time data</li>
+                    <li>Useful keywords and related search topics</li>
+                    <li>Insights into SEO performance for certain keywords</li>
+                </ul>
+
+                <h3>Why It’s Useful</h3>
+                <p>
+                    This tool is useful for understanding the current landscape of Google searches, analyzing competitive content, or simply gaining insight into the most relevant results for your research. Whether you're looking to optimize your content or keep up with current trends, this analysis tool will help you make informed decisions.
+                </p>
+            </div>
+
+            <p class="info-note">🔎 This tool scrapes and analyzes top Google results to help you identify trends and patterns.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>📊 For educational and demonstration purposes only.</p>
+        <p>Powered by Flask & Google Custom Search API.</p>
+    </footer>
+</body>
+</html>

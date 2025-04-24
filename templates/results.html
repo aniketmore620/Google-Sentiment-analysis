@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results | Google Search Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Search Results for: "{{ query }}"</h1>
+
+        <div class="section">
+            <h2>Sentiment Summary</h2>
+            <ul>
+                <li>😊 Positive: {{ sentiment_counts['positive'] }}</li>
+                <li>😐 Neutral: {{ sentiment_counts['neutral'] }}</li>
+                <li>😞 Negative: {{ sentiment_counts['negative'] }}</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Search Results Table</h2>
+            {{ tables|safe }}
+        </div>
+
+        <div class="section">
+            <h2>Keyword Frequency</h2>
+            {{ keyword_freq|safe }}
+        </div>
+
+        <div class="section">
+            <h2>Visualizations</h2>
+            {{ sentiment_plot|safe }}
+            {{ keyword_freq_plot|safe }}
+        </div>
+
+        <a href="{{ url_for('download') }}" class="btn">⬇️ Download CSV</a>
+
+        <hr>
+
+        <div class="section">
+            <h2>📢 We Value Your Feedback!</h2>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="flash {{ category }}">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+            <form action="{{ url_for('feedback') }}" method="POST">
+                <label>Your Name:</label>
+                <input type="text" name="name" required>
+
+                <label>Your Feedback:</label>
+                <textarea name="message" rows="4" required></textarea>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

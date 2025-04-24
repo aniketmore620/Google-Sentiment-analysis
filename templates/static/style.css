@@ -1,0 +1,168 @@
+/* ===== Global Styles ===== */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff6a00, #ff3f00); /* Vibrant gradient background */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+/* ===== Container ===== */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 80vh;
+    width: 100%;
+    padding: 20px;
+    background-color: #f4f7fb; /* Light background color */
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect to zoom */
+.container:hover {
+    transform: scale(1.02);
+}
+
+/* ===== Card Box ===== */
+.card {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+    backdrop-filter: blur(15px); /* Optional: For a nice blur effect behind the card */
+}
+
+/* ===== Header ===== */
+.card h1 {
+    color: #ff6a00;
+    margin-bottom: 25px;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Subtitle ===== */
+.subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* ===== Intro Text ===== */
+.intro-text {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* ===== Info Section ===== */
+.info-section {
+    margin-top: 30px;
+    text-align: left;
+    font-size: 16px;
+    color: #333;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Info Section Heading ===== */
+.info-section h3 {
+    font-size: 22px;
+    color: #ff6a00;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ===== Info List ===== */
+.info-section ul {
+    list-style-type: circle;
+    margin-left: 20px;
+    color: #444;
+    font-size: 14px;
+}
+
+/* ===== Form Elements ===== */
+input[type="text"], select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ff6a00;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(255, 105, 0, 0.1);
+}
+
+input[type="text"]:focus, select:focus {
+    outline: none;
+    border-color: #ff3f00;
+    box-shadow: 0 0 10px rgba(255, 64, 64, 0.5);
+}
+
+/* ===== Button ===== */
+button {
+    background-color: #ff6a00;
+    color: #fff;
+    padding: 14px;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #ff3f00;
+    transform: translateY(-2px);
+}
+
+/* ===== Footer ===== */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+    .card {
+        padding: 25px;
+        width: 90%;
+    }
+
+    footer {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
